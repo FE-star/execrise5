@@ -30,6 +30,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       const view = new View
       view.on('test', function () {
         assert.equal(this, view)
+        //assert.equal(this, global)
         done()
       })
       view.trigger('test')
