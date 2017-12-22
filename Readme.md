@@ -72,3 +72,9 @@ function Cat(){
   }
 })()
 ```
+
+* [extend]
+
+```
+http://www.alloyteam.com/2015/04/xiang-es6-kao-qi-di-class-js/
+```

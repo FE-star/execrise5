@@ -3,6 +3,7 @@ const assert = require('assert')
 describe('实现一个基类，可以继承，可以监听事件', function () {
   describe('ES6', function () {
     const Base = require('../lib/base.es6')
+
     class View extends Base {
       constructor(options) {
         super(options)
@@ -12,7 +13,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
     it('能够监听事件', function (done) {
       const view = new View
       view.on('test', function () {
-        done()
+           done();        
       })
       view.trigger('test')
     })
@@ -39,7 +40,8 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
   describe('ES5', function () {
     var Base = require('../lib/base.es5')
     var View = Base.extend()
-
+    
+    
     it('可以extend一个类', function () {
       var MyClass = Base.extend({
         getVal: function () {
@@ -70,8 +72,9 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       assert.equal(b instanceof B, true)
       assert.equal(b instanceof A, true)
       assert.equal(b instanceof Base, true)
-    })
-
+    }) 
+    
+    
     it('能够监听事件', function (done) {
       const view = new View
       view.on('test', function () {
@@ -80,15 +83,19 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       view.trigger('test')
     })
 
+
+    
     it('能够监听事件并传值', function (done) {
-      const view = new View
-      view.on('test', function (value) {
-        assert.equal(value, 'hello world')
-        done()
-      })
-      view.trigger('test', 'hello world')
+       const view = new View
+       view.on('test', function (value) {
+           assert.equal(value, 'hello world')
+           done()
+       })
+       view.trigger('test', 'hello world')
     })
 
+    
+    
     it('监听函数的this指向自己', function (done) {
       const view = new View
       view.on('test', function () {
@@ -97,5 +104,6 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       })
       view.trigger('test')
     })
+    
   })
 })
