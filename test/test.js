@@ -26,6 +26,16 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       view.trigger('test', 'hello world')
     })
 
+    it('能够监听事件并传多个值', function (done) {
+      const view = new View
+      view.on('test', function (value, value2) {
+        assert.equal(value, 'hello world')
+        assert.equal(value2, 'ni hao')
+        done()
+      })
+      view.trigger('test', 'hello world', 'ni hao')
+    })
+
     it('监听函数的this指向自己', function (done) {
       const view = new View
       view.on('test', function () {
@@ -82,11 +92,30 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
 
     it('能够监听事件并传值', function (done) {
       const view = new View
+      const view1 =new View
       view.on('test', function (value) {
         assert.equal(value, 'hello world')
-        done()
       })
       view.trigger('test', 'hello world')
+
+      assert.throws(function(){
+        view1.trigger('test', 'hello world'); //测试不同子类是否共用一个父类的events属性
+      }, /事件未绑定/,'不是期望的错误');
+      done();
+    })
+
+    it('能够监听事件并传多个值', function (done) {
+      const view = new View
+      const view1 =new View
+      view.on('test', function (value, value2) {
+        assert.equal(value, 'hello world')
+        assert.equal(value2, 'ni hao')
+      })
+      view.trigger('test', 'hello world', 'ni hao')
+      assert.throws(function(){
+        view1.trigger('test', 'hello world','ni hao');
+      }, /事件未绑定/,'不是期望的错误');
+      done();
     })
 
     it('监听函数的this指向自己', function (done) {
