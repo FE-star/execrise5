@@ -29,6 +29,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
     it('监听函数的this指向自己', function (done) {
       const view = new View
       view.on('test', function () {
+       
         assert.equal(this, view)
         done()
       })
