@@ -26,6 +26,20 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       view.trigger('test', 'hello world')
     })
 
+    it('传入字面量对象能够同时监听多个事件', function (done) {
+      const view = new View
+      view.on({
+        test1: function(value) {},
+        test2: function(value) {
+          done()
+        }
+      })
+      view.trigger({
+        'test1': 'hello world 1',
+        'test2': 'hello world 2'
+      })
+    })
+
     it('监听函数的this指向自己', function (done) {
       const view = new View
       view.on('test', function () {
