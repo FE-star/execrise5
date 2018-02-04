@@ -8,7 +8,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
         super(options)
       }
     }
-
+    
     it('能够监听事件', function (done) {
       const view = new View
       view.on('test', function () {
