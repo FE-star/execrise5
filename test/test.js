@@ -37,7 +37,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
   })
 
   describe('ES5', function () {
-    var Base = require('../lib/base.es5')
+    var Base = require('../lib/base.es5.weibin.js')
     var View = Base.extend()
 
     it('可以extend一个类', function () {
