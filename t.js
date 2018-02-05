@@ -32,6 +32,18 @@ Base.extend = function (proto, static) {
     merge(Cur.prototype, proto)
     merge(Cur, Super, static)
     return Cur
+
+    var Super = this
+    function Cat(){
+      Super.call(this)
+    }
+
+    var Pile = function () {}
+    Pile.prototype = this.prototype
+    // 将实例作为子类的原型
+    Cat.prototype = new Pile()
+    // 添加方法
+
 }
 merge(Base.prototype, {
     on: function (event, fn) {
