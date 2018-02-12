@@ -1,4 +1,4 @@
-const assert = require('assert')
+const assert = require('assert');
 
 describe('实现一个基类，可以继承，可以监听事件', function () {
   describe('ES6', function () {
