@@ -4,8 +4,8 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
   describe('ES6', function () {
     const Base = require('../lib/base.es6')
     class View extends Base {
-      constructor(options) {
-        super(options)
+      constructor() {
+        super()
       }
     }
 
