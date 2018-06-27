@@ -1,6 +1,7 @@
 const assert = require('assert')
 
 describe('实现一个基类，可以继承，可以监听事件', function () {
+  // ES6方式实现
   describe('ES6', function () {
     const Base = require('../lib/base.es6')
     class View extends Base {
@@ -36,9 +37,13 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
     })
   })
 
+
+  // ES5方式实现
   describe('ES5', function () {
     var Base = require('../lib/base.es5')
     var View = Base.extend()
+
+
 
     it('可以extend一个类', function () {
       var MyClass = Base.extend({
@@ -63,6 +68,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
           return word
         }
       })
+	    console.log(A)
       var B = A.extend()
       var b = new B
       assert.equal(b.say('hello world'), 'hello world')
@@ -97,5 +103,43 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       })
       view.trigger('test')
     })
+  })
+})
+
+
+describe("测试assert.throw", function() {
+  it('test custom error', function(done) {
+	  const err = new TypeError('Wrong value');
+	  err.code = 404;
+	  err.foo = 'bar';
+	  err.info = {
+		  nested: true,
+		  baz: 'text'
+	  };
+	  err.reg = /abc/i;
+    console.log(err)
+	  assert.throws(
+		  () => {
+			  throw err;
+		  },
+      function (err) { // 8支持function 和 regex
+        return true
+      }
+		  // { // node 8不支持自定义对象校验 // node 10的新增特性
+			 //  name: 'TypeError',
+			 //  message: 'Wrong value',
+			 //  info: {
+				//   nested: true,
+				//   baz: 'text'
+			 //  },
+       //  code: '404',
+       //  foo: 'bar',
+			 //  reg: /abc/i
+			 //  // Note that only properties on the validation object will be tested for.
+			 //  // Using nested objects requires all properties to be present. Otherwise
+			 //  // the validation is going to fail.
+		  // }
+	  )
+    done()
   })
 })
