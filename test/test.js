@@ -53,7 +53,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       var myclass = new MyClass()
       // console.log(myclass)
       assert.equal(myclass.getVal(), 'hello world')
-      assert.equal(myclass.say('haha'), 'haha')
+      assert.equal(MyClass.say('haha'), 'haha')
       assert.equal(myclass instanceof MyClass, true)
       assert.equal(myclass instanceof Base, true)
     })
