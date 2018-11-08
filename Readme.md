@@ -1,5 +1,7 @@
 # 继承
 
+[![Build Status](https://travis-ci.org/BeAce/lianxi5.svg?branch=master)](https://travis-ci.org/BeAce/lianxi5)
+
 ### ES6
 
 开始有 `class` 语法，可以直接定义和 `extends` 一个类型：
