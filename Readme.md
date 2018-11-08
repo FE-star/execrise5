@@ -72,3 +72,9 @@ function Cat(){
   }
 })()
 ```
+
+---
+
+让我想起了
+
+> https://github.com/ant-design/ant-design/blob/master/components/table/createStore.tsx
