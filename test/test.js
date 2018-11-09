@@ -63,14 +63,12 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
           return word
         }
       })
-      console.log(1)
       var B = A.extend()
-      console.log(3)
       var b = new B
-      //assert.equal(b.say('hello world'), 'hello world')
-      //assert.equal(b instanceof View, false)
-      //assert.equal(b instanceof B, true)
-      //assert.equal(b instanceof A, true)
+      assert.equal(b.say('hello world'), 'hello world')
+      assert.equal(b instanceof View, false)
+      assert.equal(b instanceof B, true)
+      assert.equal(b instanceof A, true)
       assert.equal(b instanceof Base, true)
     })
 
