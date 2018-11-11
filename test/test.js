@@ -11,7 +11,9 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
 
     it('能够监听事件', function (done) {
       const view = new View
+      console.log(view, '-----')
       view.on('test', function () {
+        console.log('.......')
         done()
       })
       view.trigger('test')
