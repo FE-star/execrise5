@@ -4,7 +4,8 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test1": "karma start"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/miniflycn/execrise5/issues"
   },
-  "homepage": "https://github.com/miniflycn/execrise5#readme"
+  "homepage": "https://github.com/miniflycn/execrise5#readme",
+  "devDependencies": {
+    "karma": "^3.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-requirejs": "^1.1.0",
+    "mocha": "^3.5.0"
+  }
 }
