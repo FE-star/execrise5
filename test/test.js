@@ -34,6 +34,25 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       })
       view.trigger('test')
     })
+
+    it('监听多个同名事件', function (done) {
+      const view = new View
+      view.on('test', function () {
+        assert.equal(this, view)
+        done()
+      })
+      view.on('test', function (value) {
+        assert.equal(value, 'hello world')
+        done()
+      })
+      view.on('test', function (value) {
+        assert.equal(value, 'hello world2')
+        done()
+      })
+      view.trigger('test')
+      view.trigger('test', 'hello world2')
+      view.trigger('test', 'hello world')
+    })
   })
 
   describe('ES5', function () {
