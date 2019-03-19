@@ -1,5 +1,5 @@
 {
-  "name": "execrise5",
+  "name": "exercise2",
   "version": "0.0.1",
   "description": "test",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miniflycn/execrise5.git"
+    "url": "git+https://github.com/FE-star/exercise2.git"
   },
   "keywords": [
     "test"
@@ -16,9 +16,9 @@
   "author": "Daniel Yang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/miniflycn/execrise5/issues"
+    "url": "https://github.com/FE-star/exercise2/issues"
   },
-  "homepage": "https://github.com/miniflycn/execrise5#readme",
+  "homepage": "https://github.com/FE-star/exercise2#readme",
   "devDependencies": {
     "mocha": "^6.0.2"
   }
