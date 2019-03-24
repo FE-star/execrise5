@@ -19,11 +19,11 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
 
     it('能够监听事件并传值', function (done) {
       const view = new View
-      view.on('test', function (value) {
-        assert.equal(value, 'hello world')
+      view.on('test', function (value,value2) {
+        assert.equal(value+value2, 'helloworld')
         done()
       })
-      view.trigger('test', 'hello world')
+      view.trigger('test', 'hello','world')
     })
 
     it('监听函数的this指向自己', function (done) {
@@ -82,11 +82,11 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
 
     it('能够监听事件并传值', function (done) {
       const view = new View
-      view.on('test', function (value) {
-        assert.equal(value, 'hello world')
+      view.on('test', function (value,value2) {
+        assert.equal(value+value2, 'helloworld')
         done()
       })
-      view.trigger('test', 'hello world')
+      view.trigger('test', 'hello','world')
     })
 
     it('监听函数的this指向自己', function (done) {
