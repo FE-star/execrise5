@@ -44,15 +44,36 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
       var MyClass = Base.extend({
         getVal: function () {
           return 'hello world'
+        },
+        getVals: function () {
+          return 'hello world'
         }
       }, {
         say: function (word) {
           return word
+        },
+        says: function (word) {
+          return word
         }
       })
-      var myclass = new MyClass
+
+      MyChild = MyClass.extend({
+        getValc: function () {
+          return 'kk'
+        }
+      }, 
+      {
+        sayc: function (word) {
+          return word
+        }
+      })
+      var myclass = new MyChild
       assert.equal(myclass.getVal(), 'hello world')
+      assert.equal(myclass.getVals(), 'hello world')
+      assert.equal(myclass.getValc(), 'kk')
       assert.equal(MyClass.say('haha'), 'haha')
+      assert.equal(MyClass.says('haha'), 'haha')
+      assert.equal(MyChild.sayc('haha'), 'haha')
       assert.equal(myclass instanceof MyClass, true)
       assert.equal(myclass instanceof Base, true)
     })
