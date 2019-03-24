@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/miniflycn/execrise5/issues"
   },
-  "homepage": "https://github.com/miniflycn/execrise5#readme"
+  "homepage": "https://github.com/miniflycn/execrise5#readme",
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  }
 }
