@@ -72,3 +72,5 @@ function Cat(){
   }
 })()
 ```
+
+> TODO: 参照别人的，顺便贴一下别人的推荐类似原理以便回头看。https://github.com/ant-design/ant-design/blob/master/components/table/createStore.tsx
