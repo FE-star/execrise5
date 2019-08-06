@@ -36,6 +36,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
     })
   })
 
+  /////////////////////////////////////
   describe('ES5', function () {
     var Base = require('../lib/base.es5')
     var View = Base.extend()
