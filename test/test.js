@@ -50,7 +50,7 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
           return word
         }
       })
-      var myclass = new MyClass
+      var myclass = new MyClass;
       assert.equal(myclass.getVal(), 'hello world')
       assert.equal(MyClass.say('haha'), 'haha')
       assert.equal(myclass instanceof MyClass, true)
